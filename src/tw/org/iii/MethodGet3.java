@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javafx.util.converter.IntegerStringConverter;
+
 /**
  * Servlet implementation class MethodGet
  */
@@ -18,7 +20,8 @@ public class MethodGet3 extends HttpServlet {
        
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int x, y,result ,op ;
+		int x, y,result ,op; 
+		String i = "";
 		try{
 			x = Integer.parseInt(request.getParameter("x"));
 			op = Integer.parseInt(request.getParameter("op"));
@@ -33,7 +36,16 @@ public class MethodGet3 extends HttpServlet {
 			case 1 : result = x + y; break;
 			case 2: result = x - y; break;
 			case 3: result = x * y;break;
-			case 4: result = x / y;break;
+			case 4: 
+			{
+				result = x / y; 
+				String resu = String.valueOf(result);
+				int j = x%y;
+				if(j!=0){
+					 resu = i+ "......" + j;
+				}
+			break;}
+			
 		}
 		//output
 		response.setContentType("text/html; charset=UTF-8");
