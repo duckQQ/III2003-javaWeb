@@ -41,14 +41,23 @@ public class Hello extends HttpServlet {
 //		System.out.println("key1= " + key1);
 //		String key2 = request.getParameter("key2");
 //		System.out.println("key2= " + key2);
-		
-		Enumeration<String> ps = request.getParameterNames();
-		while(ps.hasMoreElements()){
-			String item = ps.nextElement();
-			System.out.println(item);
-			String value = request.getParameter(item);
-			System.out.println(item +"=>"+value);
+		try{
+				HttpServletRequest rq = (HttpServletRequest)request;
+				String method = rq.getMethod();
+				System.out.println(method);
+				
+				Enumeration<String> ps = rq.getParameterNames();
+				while(ps.hasMoreElements()){
+					String item = ps.nextElement();
+					//System.out.println(item);
+					String value = rq.getParameter(item);
+					System.out.println(item +"=>"+value);
+				}
+		}catch(ClassCastException ce){
+			System.out.println(ce.toString());
 		}
+		
+		
 	}
 
 	/**
@@ -57,9 +66,11 @@ public class Hello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		System.out.println("doGet()");
 	}
 
+		
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
