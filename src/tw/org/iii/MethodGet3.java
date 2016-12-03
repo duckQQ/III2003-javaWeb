@@ -53,14 +53,15 @@ public class MethodGet3 extends HttpServlet {
 		out.write("<form>");
 		out.write("<input type='text' name='x' value='" +x+ "'/> ");
 		out.write("<select name='op'>");
-		out.write("<option value='1'> + </option>");
-		out.write("<option value='2'> - </option>");
-		out.write("<option value='3'> x </option>");
-		out.write("<option value='4'> / </option>");
+		out.write("<option value='1'"+ (op == 1?"selected":"")+"> + </option>");
+		out.write("<option value='2'"+ (op == 2?"selected":"")+"> - </option>");
+		out.write("<option value='3'"+ (op == 3?"selected":"")+"> x </option>");
+		out.write("<option value='4'"+ (op == 4?"selected":"")+"> / </option>");
 		out.write("</select>");
 		out.write("<input type='text' name='y' value='" +y+ "' /> ");
 		out.write("<input type='submit' value='='> ");
 		out.write("<span>"+result+"<span>");
+		
 		out.write("</form>");
 	}
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" metadata-complete="true" version="3.1">
+  <servlet>
+    <servlet-name>MyGetInputForm</servlet-name>
+    <servlet-class>tw.org.iii.GetInputForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyGetInputForm</servlet-name>
+    <url-pattern>/GetInputForm.go</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FileUp2</servlet-name>
+    <servlet-class>tw.org.iii.FileUp2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUp2</servlet-name>
+    <url-pattern>/FileUp2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FileUp3</servlet-name>
+    <servlet-class>tw.org.iii.FileUp3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUp3</servlet-name>
+    <url-pattern>/FileUp3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FileUp4</servlet-name>
+    <servlet-class>tw.org.iii.FileUp4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUp4</servlet-name>
+    <url-pattern>/FileUp4</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <description>檔案上傳目錄</description>
+    <param-name>upload-path</param-name>
+    <param-value>C:\javaee\workspace\web1127\WebContent\upload</param-value>
+  </context-param>
+</web-app>
